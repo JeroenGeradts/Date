@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+   <meta charset='utf-8'>
+   <script src='date.js'></script>
+</head>
+<body id='date'>
+<script>
+window.onload = function(){
+	var test = $date(1);
+	document.getElementById('date').innerHTML = new Date(test[4]).toLocaleString();
+}
+</script>
+</body>
+</html>
