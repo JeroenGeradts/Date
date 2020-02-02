@@ -33,7 +33,6 @@ Examples:
 - $date(949489200000) = [2000,949489200000,949359600000,20000202,36558.5]
 - $date(949359600000) = [2000,949359600000,949359600000,20000201,36557]
 - $date(20000202) = [2000,949446000000,949359600000,20000202,36558]
-
 - 1900-02-29
 - 1916-04-30
 - 1916-05-01
@@ -52,7 +51,6 @@ Exceptions:
 - JS-values are 6000 sec off between Excel dates: 1940-05-15 23:40 and 1940-05-16 01:40 (around Excel code 14746 and 14747)
 - JS-range 1970-01-01 01:00:00 to 1970-01-01 01:49:18 will result in Excel serial numbers when you use $date()
 - JS-range 1970-01-01 03:46:00 to 1970-02-01 04:46:00 will result in ISO 8601 short numbers when you use $date()
-
 - 1900-02-29 is a non existing date, but a valid Excel serial number 61
 - 1916-04-30 23:40 and 1916-05-01 01:00	(around Excel code 5965 and 5966)
 - 1937-06-30 22:50 and 1937-07-01 00:00 (around Excel code 13696 and 13697)
