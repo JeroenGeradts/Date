@@ -33,9 +33,12 @@ Examples:
 - $date(949489200000) = [2000,949489200000,949359600000,20000202,36558.5]
 - $date(949359600000) = [2000,949359600000,949359600000,20000201,36557]
 - $date(20000202) = [2000,949446000000,949359600000,20000202,36558]
-- 1900-02-29
-- 1916-04-30
-- 1916-05-01
+
+Attention:
+
+- 1900-02-29: Non existing date in Excel (serial numbers before 62 are corrected)
+- 1916-04-30: JS-values are 600 sec off after 23:40 (around Excel number 5965)
+- 1916-05-01: JS-values are 600 sec off before 01:00 (around Excel number 5966)
 - 1937-06-30
 - 1937-07-01
 - 1940-05-15
