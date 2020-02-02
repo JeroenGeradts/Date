@@ -37,7 +37,7 @@ Examples:
 
 Attention:
 
-- 1900-02-29: Non existing date in Excel (correction on Excel serial numbers before 62)
+- 1900-02-29: Non existing date in Excel (Excel serial number 60)
 - 1916-04-30: JS-values are 600 sec off after 23:40 (around Excel number 5965)
 - 1916-05-01: JS-values are 600 sec off before 01:00 (around Excel number 5966)
 - 1937-06-30: JS-values are 28 sec off after 22:50 (around Excel number 13696)
@@ -49,3 +49,4 @@ Attention:
 
 These exceptions are the result of differences between the Excel, ISO 8601 and JS-date systems. 
 And because Excel does not account for time corrections in 1916, 1937 and 1940.
+The script corrects Excel serial numbers before 61.
