@@ -18,6 +18,7 @@ Functions. You can sent the input to one of these functions:
 - $dateFromJS(input)
 
 $date() is a general function that will analyse the input and invoke the most likely of the other functions to do the conversion.
+If you only have JS primitive values as input, use $dateFromJS() instead. 
 
 Output. All functions deliver an array with these values:
 
@@ -36,28 +37,15 @@ Examples:
 
 Attention:
 
-- 1900-02-29: Non existing date in Excel (serial numbers before 62 are corrected)
-- 1916-04-30 23:40+: JS-values are 600 sec off after 23:40 (around Excel number 5965)
-- 1916-05-01 01:00-: JS-values are 600 sec off before 01:00 (around Excel number 5966)
-- 1916-04-30 23:40 until 1916-05-01 01:00: JS-values are 600 sec off (around Excel number 5965 and 5966)
-- 1937-06-30: JS-values are 28 sec off after 22:50 (around Excel numer 13696)
-- 1937-07-01: JS-values are 28 sec off before 0:00 (around Excel numer 13697)
-- 1940-05-15
-- 1940-05-16
-- 1970-01-01
-- 1970-02-01
+- 1900-02-29: Non existing date in Excel (correction on Excel serial numbers before 62)
+- 1916-04-30: JS-values are 600 sec off after 23:40 (around Excel number 5965)
+- 1916-05-01: JS-values are 600 sec off before 01:00 (around Excel number 5966)
+- 1937-06-30: JS-values are 28 sec off after 22:50 (around Excel number 13696)
+- 1937-07-01: JS-values are 28 sec off before 0:00 (around Excel number 13697)
+- 1940-05-15: JS-values are 6000 sec off after 23:40 (around Excel number 14746)
+- 1940-05-16: JS-values are 6000 sec before 01:40 (around Excel number 14747)
+- 1970-01-01: JS-values between 01:00:00 and 01:49:18 are treated as Excel serial numbers in $date()
+- 1970-01-01: JS-values after 03:46:00 are treated as ISO 8601 short numbers in $date()
 
-Exceptions:
-
-- 1900-02-29 is a non existing date, but a valid Excel serial number 61
-- JS-values are 600 sec off between Excel dates: 1916-04-30 23:40 and 1916-05-01 01:00	(around Excel code 5965 and 5966)
-- JS-values are 28 sec off between Excel dates: 1937-06-30 22:50 and 1937-07-01 00:00 (around Excel code 13696 and 13697)
-- JS-values are 6000 sec off between Excel dates: 1940-05-15 23:40 and 1940-05-16 01:40 (around Excel code 14746 and 14747)
-- JS-range 1970-01-01 01:00:00 to 1970-01-01 01:49:18 will result in Excel serial numbers when you use $date()
-- JS-range 1970-01-01 03:46:00 to 1970-02-01 04:46:00 will result in ISO 8601 short numbers when you use $date()
-- 1900-02-29 is a non existing date, but a valid Excel serial number 61
-- 1916-04-30 23:40 and 1916-05-01 01:00	(around Excel code 5965 and 5966)
-- 1937-06-30 22:50 and 1937-07-01 00:00 (around Excel code 13696 and 13697)
-- 1940-05-15 23:40 and 1940-05-16 01:40 (around Excel code 14746 and 14747)
-- 1970-01-01 01:00:00 to 1970-01-01 01:49:18
-- 1970-01-01 03:46:00 to 1970-02-01 04:46:00
+These exceptions are the result of differences between the Excel, ISO 8601 and JS-date systems. 
+And because Excel does not account for time corrections in 1916, 1937 and 1940.
