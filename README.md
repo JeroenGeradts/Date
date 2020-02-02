@@ -37,10 +37,11 @@ Examples:
 Attention:
 
 - 1900-02-29: Non existing date in Excel (serial numbers before 62 are corrected)
-- 1916-04-30: JS-values are 600 sec off after 23:40 (around Excel number 5965)
-- 1916-05-01: JS-values are 600 sec off before 01:00 (around Excel number 5966)
-- 1937-06-30
-- 1937-07-01
+- 1916-04-30 23:40+: JS-values are 600 sec off after 23:40 (around Excel number 5965)
+- 1916-05-01 01:00-: JS-values are 600 sec off before 01:00 (around Excel number 5966)
+- 1916-04-30 23:40 until 1916-05-01 01:00: JS-values are 600 sec off (around Excel number 5965 and 5966)
+- 1937-06-30: JS-values are 28 sec off after 22:50 (around Excel numer 13696)
+- 1937-07-01: JS-values are 28 sec off before 0:00 (around Excel numer 13697)
 - 1940-05-15
 - 1940-05-16
 - 1970-01-01
