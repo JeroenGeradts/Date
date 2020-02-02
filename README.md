@@ -26,7 +26,7 @@ Output. All functions deliver an array with these values:
 - JS primitive value of date and time (milisenconds)
 - JS primitive value of 1st of the month (miliseconds)
 - ISO 8601 short value for date (YYYYMMDD)
-- excel code
+- excel serial number
 
 Examples:
 
